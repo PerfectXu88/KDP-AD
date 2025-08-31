@@ -1,0 +1,143 @@
+# GitHub Pages Configuration for VIPER-R1 Project Website
+
+# Site settings
+title: "VIPER-R1: Mimicking the Physicist's Eye"
+description: "A VLM-centric Approach for Physics Formula Discovery"
+author: "Jiaqi Liu et al."
+email: "jqliu@cs.unc.edu"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# GitHub Pages specific settings
+github_username: Jiaaqiliu  # Replace with actual GitHub username
+repository: VIPER-R1  # Replace with actual repository name
+
+# Site URL (will be auto-generated for GitHub Pages)
+url: "https://jiaaqiliu.github.io"  # Replace with your actual GitHub Pages URL
+baseurl: "/VIPER-R1"  # Replace with your repository name
+
+# Theme
+theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .DS_Store
+
+# Include files in processing
+include:
+  - _pages
+  - assets
+
+# Collections (if needed for future expansion)
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Default layout for different content types
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# SEO and metadata
+lang: en-US
+timezone: UTC
+
+# Social media and academic profiles (optional)
+social_links:
+  github: Jiaaqiliu  # Replace with actual GitHub username
+  twitter: your-twitter   # Replace with actual Twitter handle (optional)
+  linkedin: your-linkedin # Replace with actual LinkedIn profile (optional)
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Academic paper information
+paper:
+  title: "Mimicking the Physicist's Eye: A VLM-centric Approach for Physics Formula Discovery"
+  authors:
+    - name: "Jiaqi Liu"
+      affiliation: "UNC-Chapel Hill, Shanghai AI Lab"
+    - name: "Songning Lai"
+      affiliation: "HKUST (Guangzhou)"
+    - name: "Pengze Li"
+      affiliation: "Shanghai AI Lab, Fudan University"
+    - name: "Di Yu"
+      affiliation: "Shanghai AI Lab, Tsinghua University"
+    - name: "Wenjie Zhou"
+      affiliation: "Nankai University, Shanghai Innovation Institute"
+    - name: "Yiyang Zhou"
+      affiliation: "UNC-Chapel Hill"
+    - name: "Peng Xia"
+      affiliation: "UNC-Chapel Hill"
+    - name: "Zijun Wang"
+      affiliation: "UC Santa Cruz"
+    - name: "Xi Chen"
+      affiliation: "Fudan University"
+    - name: "Shixiang Tang"
+      affiliation: "Shanghai AI Lab"
+    - name: "Lei Bai"
+      affiliation: "Shanghai AI Lab"
+    - name: "Wanli Ouyang"
+      affiliation: "Shanghai AI Lab, CUHK"
+    - name: "Mingyu Ding"
+      affiliation: "UNC-Chapel Hill"
+    - name: "Huaxiu Yao"
+      affiliation: "UNC-Chapel Hill"
+    - name: "Aoran Wang"
+      affiliation: "Shanghai AI Lab"
+  year: 2025
+  venue: "arXiv preprint"
+  abstract: "Automated discovery of physical laws from observational data is a grand challenge in AI. Current methods, relying on symbolic regression or LLMs, are limited to uni-modal data and overlook the rich, visual phenomenological representations of motion that are indispensable to physicists."
+
+# Dataset information
+dataset:
+  name: "PhysSymbol"
+  size: 5000
+  description: "Multimodal instances for physics formula discovery"
+  formats:
+    - "Kinematic phase portraits"
+    - "Trajectory plots"
+    - "Numerical motion data"
+    - "Ground-truth symbolic equations"
+
+# Research highlights
+highlights:
+  - metric: "Structural Score Improvement"
+    value: "56.7%"
+    description: "Over best baseline (Claude-4-Sonnet)"
+  - metric: "Accuracy Score Improvement"
+    value: "45.4%"
+    description: "Over top zero-shot model"
+  - metric: "Error Reduction"
+    value: "3×"
+    description: "Lower MSE than best baseline"
+
+# GitHub repository information
+repo:
+  code_url: "https://github.com/Jiaaqiliu/VIPER-R1"  # Replace with actual repo URL
+  dataset_url: "https://github.com/Jiaaqiliu/PhysSymbol-Dataset"  # Replace with actual dataset URL
+  paper_url: "https://arxiv.org/abs/2508.17380"  # Replace with actual arXiv URL when available
