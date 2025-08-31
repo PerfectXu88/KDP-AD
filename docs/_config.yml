@@ -1,10 +1,10 @@
 # GitHub Pages Configuration for VIPER-R1 Project Website
 
 # Site settings
-title: "VIPER-R1: Mimicking the Physicist's Eye"
-description: "A VLM-centric Approach for Physics Formula Discovery"
-author: "Jiaqi Liu et al."
-email: "jqliu@cs.unc.edu"
+title: "KDP: A Knowledge-Driven Diffusion Policy"
+description: "A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing"
+author: "Chengkai Xu et al."
+email: "2534242@tongji.edu.cn"
 
 # Build settings
 markdown: kramdown
@@ -15,12 +15,12 @@ plugins:
   - jekyll-seo-tag
 
 # GitHub Pages specific settings
-github_username: Jiaaqiliu  # Replace with actual GitHub username
-repository: VIPER-R1  # Replace with actual repository name
+github_username: PerfectXu88  # Replace with actual GitHub username
+repository: KDP-AD  # Replace with actual repository name
 
 # Site URL (will be auto-generated for GitHub Pages)
-url: "https://jiaaqiliu.github.io"  # Replace with your actual GitHub Pages URL
-baseurl: "/VIPER-R1"  # Replace with your repository name
+url: "https://perfectxu88.github.io"  # Replace with your actual GitHub Pages URL
+baseurl: "/KDP-AD"  # Replace with your repository name
 
 # Theme
 theme: minima
@@ -68,7 +68,7 @@ timezone: UTC
 
 # Social media and academic profiles (optional)
 social_links:
-  github: Jiaaqiliu  # Replace with actual GitHub username
+  github: PerfectXu88  # Replace with actual GitHub username
   twitter: your-twitter   # Replace with actual Twitter handle (optional)
   linkedin: your-linkedin # Replace with actual LinkedIn profile (optional)
 
@@ -77,47 +77,22 @@ social_links:
 
 # Academic paper information
 paper:
-  title: "Mimicking the Physicist's Eye: A VLM-centric Approach for Physics Formula Discovery"
+  title: "A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing"
   authors:
-    - name: "Jiaqi Liu"
-      affiliation: "UNC-Chapel Hill, Shanghai AI Lab"
-    - name: "Songning Lai"
-      affiliation: "HKUST (Guangzhou)"
-    - name: "Pengze Li"
-      affiliation: "Shanghai AI Lab, Fudan University"
-    - name: "Di Yu"
-      affiliation: "Shanghai AI Lab, Tsinghua University"
-    - name: "Wenjie Zhou"
-      affiliation: "Nankai University, Shanghai Innovation Institute"
-    - name: "Yiyang Zhou"
-      affiliation: "UNC-Chapel Hill"
-    - name: "Peng Xia"
-      affiliation: "UNC-Chapel Hill"
-    - name: "Zijun Wang"
-      affiliation: "UC Santa Cruz"
-    - name: "Xi Chen"
-      affiliation: "Fudan University"
-    - name: "Shixiang Tang"
-      affiliation: "Shanghai AI Lab"
-    - name: "Lei Bai"
-      affiliation: "Shanghai AI Lab"
-    - name: "Wanli Ouyang"
-      affiliation: "Shanghai AI Lab, CUHK"
-    - name: "Mingyu Ding"
-      affiliation: "UNC-Chapel Hill"
-    - name: "Huaxiu Yao"
-      affiliation: "UNC-Chapel Hill"
-    - name: "Aoran Wang"
-      affiliation: "Shanghai AI Lab"
+    - name: "Chengkai Xu"
+      affiliation: "Tongji University"
   year: 2025
   venue: "arXiv preprint"
-  abstract: "Automated discovery of physical laws from observational data is a grand challenge in AI. Current methods, relying on symbolic regression or LLMs, are limited to uni-modal data and overlook the rich, visual phenomenological representations of motion that are indispensable to physicists."
+  abstract: "End-to-end autonomous driving remains constrained by the need to generate multimodal actions, maintain temporal stability, and generalize across diverse scenarios. Existing methods often collapse multimodality, struggle with long-horizon consistency, or lack modular adaptability. This paper presents KDP, a knowledge-driven diffusion policy that integrates generative diffusion modeling with a sparse mixture-of-experts routing mechanism. 
+The diffusion component generates temporally coherent and multimodal action sequences, while the expert routing mechanism activates specialized and reusable experts according to context, enabling modular knowledge composition.
+Extensive experiments across representative driving scenarios demonstrate that KDP achieves consistently higher success rates, reduced collision risk, and smoother control compared to prevailing paradigms. 
+Ablation studies highlight the effectiveness of sparse expert activation and the Transformer backbone, and activation analyses reveal structured specialization and cross-scenario reuse of experts. These results establish diffusion with expert routing as a scalable and interpretable paradigm for knowledge-driven end-to-end autonomous driving."
 
 # Dataset information
 dataset:
-  name: "PhysSymbol"
-  size: 5000
-  description: "Multimodal instances for physics formula discovery"
+  name: "Meta_KDP"
+  size: 3000
+  description: "Metadrive dataset collected by PPO Expert Agent."
   formats:
     - "Kinematic phase portraits"
     - "Trajectory plots"
@@ -136,8 +111,8 @@ highlights:
     value: "3×"
     description: "Lower MSE than best baseline"
 
-# GitHub repository information
+# GitHub repository information https://perfectxu88.github.io/KDP-AD/
 repo:
-  code_url: "https://github.com/Jiaaqiliu/VIPER-R1"  # Replace with actual repo URL
-  dataset_url: "https://github.com/Jiaaqiliu/PhysSymbol-Dataset"  # Replace with actual dataset URL
-  paper_url: "https://arxiv.org/abs/2508.17380"  # Replace with actual arXiv URL when available
+  code_url: "https://github.com/PerfectXu88/KDP-AD"  # Replace with actual repo URL
+  dataset_url: ""  # Replace with actual dataset URL
+  paper_url: ""  # Replace with actual arXiv URL when available
