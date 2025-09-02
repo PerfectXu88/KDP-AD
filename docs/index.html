@@ -144,15 +144,14 @@
                                 <h4>Step 1: Forward Diffusion of Action Sequences</h4>
                                 <p>The forward diffusion process perturbs expert action sequences with gradually injected Gaussian noise to create supervised training targets, enabling the policy to learn how to recover clean and temporally coherent trajectories during the reverse denoising process.</p>
                                 <div class="formula">
-<!--                                    L<sub>MSI-1</sub> = -𝔼<sub>(E,Y)~D<sub>phys</sub></sub> Σ<sub>t=1</sub><sup>|Y|</sup> log π<sub>θ</sub>(y<sub>t</sub> | E, y<sub>&lt;t</sub>)-->
-                                    q(at | a0) = 𝒩( √( \bar{α}t ) · a0, (1 − \bar{α}t) · I )
+                                    <span class="formula">\( q(a_t \mid a_0) = \mathcal{N}\big(\sqrt{\bar{\alpha}_t} \, a_0, \, (1-\bar{\alpha}_t) I \big) \)</span>
                                 </div>
                             </div>
                             <div class="step">
                                 <h4>Step 2: Reverse Denoising Process as Driving Policy</h4>
                                 <p>The reverse denoising process serves as the driving policy by iteratively transforming Gaussian noise into coherent, multi-modal action sequences conditioned on observations, ensuring temporal consistency and capturing the variability of human demonstrations.</p>
                                 <div class="formula">
-                                    at−1 = (1/√αt) ( at − (1−αt)/√(1−\bar{α}t) · εθ(at, ot, t) ) + σtz,  z ∼ 𝒩(0,I)
+                                    <span class="formula">\( p_\theta(a_{t-1} \mid a_t, o_{t}) = \mathcal{N}\!\big(\mu_\theta(a_t, o_{t}, t), \, \Sigma_\theta(a_t, o_{t}, t)\big), \quad t = T,\ldots,1 \)</span>
                                 </div>
                             </div>
                         </div>
@@ -186,18 +185,6 @@
                               <strong>Step 3:</strong>
                               Training Objective with Routing Constraints:
                               <span class="formula">\( \mathcal{L} = \mathcal{L}_{\text{denoise}} + \lambda_{\text{bal}}\,\mathcal{L}_{\text{balance}} - \gamma\, I(K,E) \)</span>
-                            </div>
-                        </div>
-
-                        <div class="sr2-steps">
-                            <div class="sr2-step">
-                                <strong>Step 1:</strong> Integration of MoE into Diffusion Policy: \epsilon_\theta(a_t, o_t, t) = \sum_{i \in \mathcal{S}t} g\phi^i(o_t)\,\epsilon_{\theta_i}(a_t, o_t, t)
-                            </div>
-                            <div class="sr2-step">
-                                <strong>Step 2:</strong> Routing Mechanism: g_\phi(x) = \text{softmax}(xW)
-                            </div>
-                            <div class="sr2-step">
-                                <strong>Step 3:</strong> Training Objective with Routing Constraints: \mathcal{L} = \mathcal{L}{\text{denoise}} + \lambda{\text{bal}}\mathcal{L}_{\text{balance}} - \gamma I(K,E)
                             </div>
                         </div>
                     </div>
