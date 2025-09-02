@@ -99,8 +99,8 @@
                     <h3>Key Contributions</h3>
                     <ul>
                         <li><span class="highlight">A knowledge-driven end-to-end driving framework.</span> We remodel experts in MoE as abstract driving knowledge units, enabling modular and compositional policy learning beyond task-centric formulations.</li>
-                        <li>Integration of diffusion modeling with expert routing. We combine diffusion policies with MoE, which can maintain long-horizon consistency while adapting to diverse scenarios through modularity and selective reuse of knowledge.</li>
-                        <li>Comprehensive empirical validation. We demonstrate the effectiveness of the proposed approach on diverse driving scenarios, achieving superior safety, generalization, and efficiency compared with baselines.</li>
+                        <li><span class="highlight">Integration of diffusion modeling with expert routing.</span> We combine diffusion policies with MoE, which can maintain long-horizon consistency while adapting to diverse scenarios through modularity and selective reuse of knowledge.</li>
+                        <li><span class="highlight">Comprehensive empirical validation.</span> We demonstrate the effectiveness of the proposed approach on diverse driving scenarios, achieving superior safety, generalization, and efficiency compared with baselines.</li>
                     </ul>
                 </div>
             </div>
@@ -123,81 +123,52 @@
             </div>
 
             <div class="method-stages">
-                <!-- Stage 1: MSI -->
+                <!-- Stage 1: DP -->
                 <div class="stage">
                     <div class="stage-header">
                         <div class="stage-number">1</div>
-                        <h3>Motion Structure Induction (MSI)</h3>
+                        <h3>Diffusion Policy for Driving</h3>
                     </div>
                     <div class="stage-content">
                         <div class="stage-steps">
                             <div class="step">
-                                <h4>Step 1: Joint Induction</h4>
-                                <p>Joint generation of Causal Chain of Thought (C-CoT) and initial Symbolic Ansatz from visual evidence and trajectory data.</p>
+                                <h4>Step 1: Forward Diffusion of Action Sequences</h4>
+                                <p>The forward diffusion process perturbs expert action sequences with gradually injected Gaussian noise to create supervised training targets, enabling the policy to learn how to recover clean and temporally coherent trajectories during the reverse denoising process.</p>
                                 <div class="formula">
-                                    L<sub>MSI-1</sub> = -𝔼<sub>(E,Y)~D<sub>phys</sub></sub> Σ<sub>t=1</sub><sup>|Y|</sup> log π<sub>θ</sub>(y<sub>t</sub> | E, y<sub>&lt;t</sub>)
+<!--                                    L<sub>MSI-1</sub> = -𝔼<sub>(E,Y)~D<sub>phys</sub></sub> Σ<sub>t=1</sub><sup>|Y|</sup> log π<sub>θ</sub>(y<sub>t</sub> | E, y<sub>&lt;t</sub>)-->
+                                    q(at | a0) = 𝒩( √( \bar{α}t ) · a0, (1 − \bar{α}t) · I )
                                 </div>
                             </div>
                             <div class="step">
-                                <h4>Step 2: C-CoT-Guided Formulation</h4>
-                                <p>Refines symbolic formulation by conditioning on ground-truth reasoning chain, focusing on syntax and semantics of physical formalisms.</p>
+                                <h4>Step 2: Reverse Denoising Process as Driving Policy</h4>
+                                <p>The reverse denoising process serves as the driving policy by iteratively transforming Gaussian noise into coherent, multi-modal action sequences conditioned on observations, ensuring temporal consistency and capturing the variability of human demonstrations.</p>
                                 <div class="formula">
-                                    L<sub>MSI-2</sub> = -𝔼<sub>(E,C,S)~D<sub>phys</sub></sub> Σ<sub>t=1</sub><sup>|S|</sup> log π<sub>θ</sub>(s<sub>t</sub> | E, C, s<sub>&lt;t</sub>)
+                                    at−1 = (1/√αt) ( at − (1−αt)/√(1−\bar{α}t) · εθ(at, ot, t) ) + σtz,  z ∼ 𝒩(0,I)
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Stage 2: RGSC -->
+                <!-- Stage 2: MoE -->
                 <div class="stage">
                     <div class="stage-header">
                         <div class="stage-number">2</div>
-                        <h3>Reward-Guided Symbolic Calibration (RGSC)</h3>
+                        <h3>MoE-based Knowledge Routing</h3>
                     </div>
                     <div class="stage-content">
                         <p>
-                            Uses Group Relative Policy Optimization (GRPO) to refine symbolic hypotheses through a sophisticated reward system:
-                        </p>
-                        <div class="reward-components">
-                            <div class="reward-item">
-                                <h4>Format Reward (R<sub>format</sub>)</h4>
-                                <p>Ensures adherence to predefined template structure</p>
-                            </div>
-                            <div class="reward-item">
-                                <h4>Structural Reward (R<sub>structural</sub>)</h4>
-                                <p>Parameter-agnostic Jaccard similarity for topological correctness</p>
-                            </div>
-                            <div class="reward-item">
-                                <h4>Accuracy Reward (R<sub>accuracy</sub>)</h4>
-                                <p>Binary reward for exact symbolic matches</p>
-                            </div>
-                        </div>
-                        <div class="formula">
-                            R(S<sub>i</sub>) = w<sub>f</sub>R<sub>format</sub>(S<sub>i</sub>) + w<sub>s</sub>R<sub>structural</sub>(S<sub>i</sub>, S<sub>GT</sub>) + w<sub>a</sub>R<sub>accuracy</sub>(S<sub>i</sub>, S<sub>GT</sub>)
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stage 3: SR² -->
-                <div class="stage">
-                    <div class="stage-header">
-                        <div class="stage-number">3</div>
-                        <h3>Symbolic Residual Realignment (SR²)</h3>
-                    </div>
-                    <div class="stage-content">
-                        <p>
-                            Agentic refinement process where VIPER-R1 invokes external symbolic regression tools to correct residual errors:
+                            The MoE-based knowledge routing extends the diffusion driving policy with modular experts and a top-K router, enabling dynamic composition of specialized knowledge units while ensuring balanced and efficient expert utilization.
                         </p>
                         <div class="sr2-steps">
                             <div class="sr2-step">
-                                <strong>Step 1:</strong> Calculate residual field: r(t) = a<sub>GT</sub>(t) - a<sub>VLM</sub>(x, v, t)
+                                <strong>Step 1:</strong> Integration of MoE into Diffusion Policy: \epsilon_\theta(a_t, o_t, t) = \sum_{i \in \mathcal{S}t} g\phi^i(o_t)\,\epsilon_{\theta_i}(a_t, o_t, t)
                             </div>
                             <div class="sr2-step">
-                                <strong>Step 2:</strong> Apply symbolic regression: a<sub>residual</sub>(x, v, t) ← SR(x, v, t, r(t))
+                                <strong>Step 2:</strong> Routing Mechanism: g_\phi(x) = \text{softmax}(xW)
                             </div>
                             <div class="sr2-step">
-                                <strong>Step 3:</strong> Theory realignment: a<sub>final</sub>(x, v, t) = a<sub>VLM</sub>(x, v, t) + a<sub>residual</sub>(x, v, t)
+                                <strong>Step 3:</strong> Training Objective with Routing Constraints: \mathcal{L} = \mathcal{L}{\text{denoise}} + \lambda{\text{bal}}\mathcal{L}_{\text{balance}} - \gamma I(K,E)
                             </div>
                         </div>
                     </div>
