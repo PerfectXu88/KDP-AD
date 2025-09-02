@@ -44,7 +44,7 @@
             <div class="hero-content-vertical">
                 <h1 class="hero-title">
 <!--                    KDP: <span class="highlight">A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing</span>-->
-                    KDP:
+                    KDP-AD:
                     <div class="highlight"> A Knowledge-Driven Diffusion Policy </div>
                     <div class="highlight">for End-to-End Autonomous Driving Based on Expert Routing</div>
                 </h1>
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="https://arxiv.org/abs/2508.17380" class="btn btn-primary" target="_blank">
+                    <a href="" class="btn btn-primary" target="_blank">
                         <i class="fas fa-file-pdf"></i> Paper
                     </a>
                     <a href="https://github.com/perfectxu88/KDP-AD" class="btn btn-secondary">
@@ -93,18 +93,14 @@
                    The diffusion component generates temporally coherent and multimodal action sequences, while the expert routing mechanism activates specialized and reusable experts according to context, enabling modular knowledge composition.
                 </p>
                 <p>
-                    Extensive experiments across representative driving scenarios demonstrate that KDP achieves consistently higher success rates, reduced collision risk, and smoother control compared to prevailing paradigms.
-                </p>
-                <p>
-                    Ablation studies highlight the effectiveness of sparse expert activation and the Transformer backbone, and activation analyses reveal structured specialization and cross-scenario reuse of experts. These results establish diffusion with expert routing as a scalable and interpretable paradigm for knowledge-driven end-to-end autonomous driving.
+                    Extensive experiments across representative driving scenarios demonstrate that KDP achieves consistently higher success rates, reduced collision risk, and smoother control compared to prevailing paradigms. Ablation studies highlight the effectiveness of sparse expert activation and the Transformer backbone, and activation analyses reveal structured specialization and cross-scenario reuse of experts. These results establish diffusion with expert routing as a scalable and interpretable paradigm for knowledge-driven end-to-end autonomous driving.
                 </p>
                 <div class="key-contributions">
                     <h3>Key Contributions</h3>
                     <ul>
-                        <li>VIPER-R1, a multimodal framework that simulates the scientific reasoning process by integrating visual perception, trajectory data, and symbolic reasoning</li>
-                        <li>A two-stage training pipeline featuring Motion Structure Induction (MSI) and Reward-Guided Symbolic Calibration (RGSC)</li>
-                        <li>An agentic refinement stage, Symbolic Residual Realignment (SR²), where the VLM proactively utilizes external tools to harmonize theoretical hypotheses with empirical data</li>
-                        <li>PhysSymbol, a new comprehensive benchmark of 5,000 multimodal instances for physics formula discovery</li>
+                        <li><span class="highlight">A knowledge-driven end-to-end driving framework.</span> We remodel experts in MoE as abstract driving knowledge units, enabling modular and compositional policy learning beyond task-centric formulations.</li>
+                        <li>Integration of diffusion modeling with expert routing. We combine diffusion policies with MoE, which can maintain long-horizon consistency while adapting to diverse scenarios through modularity and selective reuse of knowledge.</li>
+                        <li>Comprehensive empirical validation. We demonstrate the effectiveness of the proposed approach on diverse driving scenarios, achieving superior safety, generalization, and efficiency compared with baselines.</li>
                     </ul>
                 </div>
             </div>
@@ -117,11 +113,11 @@
             <h2 class="section-title">Methodology</h2>
             <div class="method-overview">
                 <div class="method-image">
-                    <img src="assets/images/fig_vlm_framework.png" alt="VIPER-R1 Framework" class="method-diagram">
+                    <img src="assets/images/Fig_framework.png" alt="VIPER-R1 Framework" class="method-diagram">
                 </div>
                 <div class="method-description">
                     <p>
-                        Our framework consists of a comprehensive two-stage pipeline designed to emulate the cognitive workflow of physicists in discovering physical laws from visual observations.
+                        Framework of the proposed Knowledge-Driven Diffusion Policy. Scene inputs condition a diffusion-based policy to generate multi-modal, temporally coherent action sequences. A Mixture-of-Experts module refines these sequences by activating experts interpreted as abstract knowledge units, whose combinations express diverse and extensible driving skills such as interaction, maneuvering, and adaptation.
                     </p>
                 </div>
             </div>
@@ -383,35 +379,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Scaling Analysis -->
-            <!-- <div class="scaling-section">
-                <h3>Scaling Properties</h3>
-                <div class="scaling-grid">
-                    <div class="scaling-chart">
-                        <img src="assets/images/fig_scaling_law.png" alt="Scaling Law" class="chart-img">
-                        <p class="chart-caption">Performance scales consistently with training dataset size</p>
-                    </div>
-                    <div class="scaling-insights">
-                        <h4>Key Findings</h4>
-                        <ul>
-                            <li><strong>Power-law scaling:</strong> Structural score improves systematically with more data</li>
-                            <li><strong>Unsaturated performance:</strong> No plateau observed, indicating potential for further improvement</li>
-                            <li><strong>Future promise:</strong> Larger datasets will enable even better physics discovery</li>
-                        </ul>
-                        <div class="scaling-stats">
-                            <div class="stat">
-                                <span class="stat-number">638 → 4,500</span>
-                                <span class="stat-label">Training samples range</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">Consistent ↗</span>
-                                <span class="stat-label">Performance trend</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </section>
 
@@ -475,84 +442,14 @@
         </div>
     </section>
 
-    <!-- Code Section
-    <section id="code" class="section">
-        <div class="container">
-            <h2 class="section-title">Code & Implementation</h2>
-            <div class="code-overview">
-                <div class="code-description">
-                    <p>
-                        Complete implementation of PA-VLM-R1 including training pipeline, evaluation scripts, and dataset generation tools.
-                    </p>
-                    <div class="tech-stack">
-                        <h3>Technical Stack</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">PyTorch</span>
-                            <span class="tech-item">DeepSpeed</span>
-                            <span class="tech-item">Transformers</span>
-                            <span class="tech-item">PySR</span>
-                            <span class="tech-item">Qwen-VL-2.5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-structure">
-                    <h3>Repository Structure</h3>
-                    <div class="file-tree">
-                        <div class="file-item">📁 R1-V/ - Training pipeline</div>
-                        <div class="file-item">📁 data_process/ - Data generation</div>
-                        <div class="file-item">📁 Para_search/ - Symbolic regression</div>
-                        <div class="file-item">📄 sft_vlm_formula_phase_1.sh</div>
-                        <div class="file-item">📄 sft_vlm_formula_phase_2.sh</div>
-                        <div class="file-item">📄 grpo_vlm_formula_phase_3.sh</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="code-features">
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-brain"></i>
-                        <h4>Multi-Stage Training</h4>
-                        <p>Complete 3-stage training pipeline with MSI and RGSC</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Evaluation Suite</h4>
-                        <p>Comprehensive evaluation metrics and benchmarking tools</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-database"></i>
-                        <h4>Data Generation</h4>
-                        <p>Automated physics simulation and dataset creation</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-cogs"></i>
-                        <h4>SR² Integration</h4>
-                        <p>Seamless symbolic regression tool integration</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="code-download">
-                <a href="#" class="btn btn-primary btn-large">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-                <p class="download-info">Code will be released upon paper acceptance</p>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Citation Section -->
     <section id="citation" class="section bg-light">
         <div class="container">
             <h2 class="section-title">Citation</h2>
             <div class="citation-box">
-                <pre><code>@article{liu2025VIPERr1,
-  title={Mimicking the Physicist's Eye: A VLM-centric Approach for Physics Formula Discovery},
-  author={Liu, Jiaqi and Lai, Songning and Li, Pengze and Yu, Di and Zhou, Wenjie and Zhou, Yiyang and Xia, Peng and Wang, Zijun and Chen, Xi and Tang, Shixiang and Bai, Lei and Ouyang, Wanli and Ding, Mingyu and Yao, Huaxiu and Wang, Aoran},
-  journal={arXiv preprint arXiv:2508.17380},
-  year={2025}
-}</code></pre>
+                <pre><code>
+                    wait for me :-)
+                </code></pre>
                 <button class="copy-btn" onclick="copyBibTeX()">
                     <i class="fas fa-copy"></i> Copy BibTeX
                 </button>
@@ -565,8 +462,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>VIPER-R1</h4>
-                    <p>Physics Reasoning and Inductive Synthesis Model for automated physics formula discovery.</p>
+                    <h4>KDP-AD</h4>
+                    <p>A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
@@ -582,7 +479,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 VIPER-R1. All rights reserved.</p>
+                <p>&copy; 2025 KDP-AD. All rights reserved.</p>
             </div>
         </div>
     </footer>
