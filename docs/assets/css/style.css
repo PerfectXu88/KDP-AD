@@ -504,6 +504,14 @@ a:hover {
     margin: 2rem 0;
 }
 
+#comparison caption {
+    caption-side: top;    /* 标题在表格上方 */
+    text-align: center;   /* 水平居中 */
+    font-weight: bold;    /* 加粗可读性更好（可选） */
+    margin-bottom: 0.5rem;
+}
+
+
 .chart-img {
     max-width: 100%;
     height: auto;
