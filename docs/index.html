@@ -201,31 +201,7 @@
             <!-- Main Results -->
             <div class="results-section">
                 <h3>Main Results</h3>
-                <p>VIPER-R1 significantly outperforms state-of-the-art VLMs on the PhysSymbol benchmark:</p>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-metric">
-                            <span class="metric-value">0.812</span>
-                            <span class="metric-label">Structural Score</span>
-                        </div>
-                        <p class="metric-description">56.7% improvement over best baseline (Claude-4-Sonnet)</p>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-metric">
-                            <span class="metric-value">0.487</span>
-                            <span class="metric-label">Accuracy Score</span>
-                        </div>
-                        <p class="metric-description">45.4% improvement over top zero-shot model</p>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-metric">
-                            <span class="metric-value">0.032</span>
-                            <span class="metric-label">Post-SR² MSE</span>
-                        </div>
-                        <p class="metric-description">3× lower error than best baseline (0.091)</p>
-                    </div>
-                </div>
+                <p>Comparison of security, efficiency, and comfort test results of different methods in multiple scenarios:</p>
 
                 <!-- DataTables 样式与脚本（CDN） -->
                 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -246,7 +222,6 @@
 
                 <div class="table-container">
                   <table id="comparison" class="display nowrap">
-                    <caption>Comparison of security, efficiency, and comfort test results of different methods in multiple scenarios.</caption>
                     <thead>
                       <tr>
                         <th>Scenario</th>
@@ -327,13 +302,6 @@
                   });
                 </script>
 
-
-
-                <div class="results-chart">
-                    <img src="assets/images/Fig_main_performance.png" alt="Main Performance Results" class="chart-img">
-                </div>
-            </div>
-
             <!-- Comparison Chart -->
             <div class="results-section">
                 <h3>Expert Activation Analysis</h3>
@@ -354,26 +322,26 @@
             <!-- Ablation Study -->
             <div class="results-section">
                 <h3>Ablation Study</h3>
-                <p>Each component of our framework contributes significantly to the overall performance:</p>
+                <p>Performance comparison of model variants across driving scenarios:</p>
                 <div class="ablation-grid">
                     <div class="ablation-chart">
                         <img src="assets/images/Fig_ablation.png" alt="Ablation Study Results" class="chart-img">
-                        <p class="chart-caption">Contribution of MSI and RGSC stages</p>
+                        <p class="chart-caption">Contribution of Transformer and MoE stages</p>
                     </div>
                     <div class="ablation-results">
                         <div class="ablation-item">
-                            <h4>Base Model (Qwen-VL-2.5)</h4>
-                            <p>Structural: 0.096 | Accuracy: 0.179</p>
+                            <h4>Baseline-U</h4>
+                            <p>Sce-1: 0.68 | Sce-2: 0.71 | Sce-3: 0.91</p>
                         </div>
                         <div class="ablation-item">
-                            <h4>+ MSI (SFT only)</h4>
-                            <p>Structural: 0.554 | Accuracy: 0.399</p>
-                            <span class="improvement">+475% structural improvement</span>
+                            <h4>Baseline-T (+ Transformer)</h4>
+                            <p>Sce-1: 0.76 | Sce-2: 0.84 | Sce-3: 0.98</p>
+<!--                            <span class="improvement">Improvement in Timeliness</span>-->
                         </div>
                         <div class="ablation-item">
-                            <h4>+ MSI + RGSC (Full Model)</h4>
-                            <p>Structural: 0.812 | Accuracy: 0.487</p>
-                            <span class="improvement">+746% total improvement</span>
+                            <h4>Ours (+ MoE)</h4>
+                            <p>Sce-1: 0.94 | Sce-2: 0.90 | Sce-3: 1.00</p>
+<!--                            <span class="improvement">+746% total improvement</span>-->
                         </div>
                     </div>
                 </div>
@@ -390,89 +358,17 @@
             <div class="featured-case">
                 <h3>Complex System: Non-linear Damping with Stochastic Noise</h3>
                 <p>
-                    We examine a challenging system governed by <code>a(t) = -kx - cv³ + η(t)</code>, combining linear restoring force, 
-                    non-linear damping, and stochastic noise. This case demonstrates VIPER-R1's ability to identify and integrate 
-                    components with fundamentally different characteristics.
+                    Perfect_Xu NB.
                 </p>
                 
                 <div class="case-analysis-grid">
                     <div class="case-visualization">
                         <img src="assets/images/Fig_case1.png" alt="Complex System Analysis" class="case-img">
-                        <p class="case-caption">Phase space and trajectory analysis of complex dynamical system</p>
+                        <p class="case-caption">Case 1</p>
                     </div>
-                    
-                    <div class="case-reasoning">
-                        <h4><i class="fas fa-brain"></i> Chain-of-Thought Analysis</h4>
-                        <div class="reasoning-steps">
-                            <div class="step">
-                                <h5>Visual Pattern Recognition</h5>
-                                <ul>
-                                    <li><strong>Oscillatory x(t):</strong> Linear restoring force (-k·x)</li>
-                                    <li><strong>Spiral structures in phase space:</strong> Non-linear damping (-c·v³)</li>
-                                    <li><strong>Irregular fluctuations:</strong> Stochastic noise η(t)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
-                <div class="equation-comparison">
-                    <div class="equation-row">
-                        <div class="equation-box">
-                            <h5>Ground Truth</h5>
-                            <div class="equation">a(t) = -1.542x - 2.766v³ + 0.450η(t)</div>
-                        </div>
-                        <div class="equation-box">
-                            <h5>VIPER-R1 Output</h5>
-                            <div class="equation">a(t) = -1.454x - 2.834v³ + 0.447η(t)</div>
-                        </div>
-                    </div>
-                    <div class="accuracy-note">
-                        <p><i class="fas fa-check-circle"></i> <strong>Remarkable Accuracy:</strong> The model correctly identifies all three physical components with high quantitative precision</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Cases Grid -->
-            <div class="additional-cases">
-                <h3>Additional Case Studies</h3>
-                <div class="cases-grid">
-                    <div class="case-item">
-                        <img src="assets/images/analysis_1.png" alt="Damped Oscillator" class="case-thumb">
-                        <div class="case-info">
-                            <h4>Damped Oscillator</h4>
-                            <p>Linear system with velocity damping</p>
-                            <div class="case-equation">a = -kx - cv</div>
-                        </div>
-                    </div>
-                    
-                    <div class="case-item">
-                        <img src="assets/images/analysis_2.png" alt="Driven System" class="case-thumb">
-                        <div class="case-info">
-                            <h4>Driven System</h4>
-                            <p>Periodic external forcing</p>
-                            <div class="case-equation">a = -kx + F₀cos(ωt)</div>
-                        </div>
-                    </div>
-                    
-                    <div class="case-item">
-                        <img src="assets/images/analysis_3.png" alt="Non-linear Dynamics" class="case-thumb">
-                        <div class="case-info">
-                            <h4>Non-linear Potential</h4>
-                            <p>Cubic restoring force</p>
-                            <div class="case-equation">a = -kx - αx³</div>
-                        </div>
-                    </div>
-                    
-                    <div class="case-item">
-                        <img src="assets/images/analysis_4.png" alt="Multi-frequency System" class="case-thumb">
-                        <div class="case-info">
-                            <h4>Multi-scale Dynamics</h4>
-                            <p>Multiple time scales</p>
-                            <div class="case-equation">a = -k₁x - k₂x cos(ωt)</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
