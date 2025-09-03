@@ -511,6 +511,40 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.main-video {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.main-video video {
+  width: 100%;
+  max-width: 1200px;   /* 主视频最大宽度 */
+  aspect-ratio: 4/3;   /* 保持比例 */
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 600px;   /* 小视频最大宽度 */
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.video-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
 
 .chart-img {
     max-width: 100%;
