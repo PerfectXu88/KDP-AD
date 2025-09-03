@@ -530,6 +530,28 @@ a:hover {
     align-items: start;
 }
 
+.expert-grid {
+    display: flex;
+    justify-content: center;   /* 水平居中 */
+    align-items: center;       /* 垂直居中（如果有高度时生效） */
+    margin: 1.5rem 0;          /* 上下留点空间 */
+    text-align: center;        /* 图片下方文字居中 */
+}
+
+.expert-grid img.chart-img {
+    max-width: 100%;
+    height: auto;
+    display: block;            /* 避免图片下方出现小间隙 */
+    margin: 0 auto;            /* 图片自身居中 */
+}
+
+.expert-grid p.chart-caption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
 .ablation-results {
     display: flex;
     flex-direction: column;
