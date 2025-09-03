@@ -227,6 +227,68 @@
                     </div>
                 </div>
 
+                <div class="table-responsive">
+  <table class="table table-bordered table-striped text-center align-middle">
+    <caption>
+      Comparison of security, efficiency, and comfort test results of different methods in multiple scenarios.
+    </caption>
+    <thead class="table-dark">
+      <tr>
+        <th>Scenario</th>
+        <th>Model</th>
+        <th>Success Rate</th>
+        <th>Collision Rate</th>
+        <th>Average Episodic Reward</th>
+        <th>Average Velocity (m/s)</th>
+        <th>Acceleration Variance</th>
+        <th>Average Completion Steps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="4">In Ramp</td>
+        <td>PPO-Lag</td>
+        <td>0.95</td>
+        <td>0.02</td>
+        <td>191.86</td>
+        <td>7.06</td>
+        <td>0.38</td>
+        <td>250.67</td>
+      </tr>
+      <tr>
+        <td>RPID</td>
+        <td>0.99</td>
+        <td>0.01</td>
+        <td>196.27</td>
+        <td>7.47</td>
+        <td>0.38</td>
+        <td>242.57</td>
+      </tr>
+      <tr>
+        <td>IBC</td>
+        <td>0.86</td>
+        <td>0.11</td>
+        <td>190.28</td>
+        <td>8.03</td>
+        <td>0.35</td>
+        <td>220.78</td>
+      </tr>
+      <tr>
+        <td><strong>Ours</strong></td>
+        <td><strong>1.00</strong></td>
+        <td><strong>0.00</strong></td>
+        <td><strong>197.52</strong></td>
+        <td><strong>8.61</strong></td>
+        <td>0.37</td>
+        <td><strong>210.99</strong></td>
+      </tr>
+      <!-- Intersection 和 Roundabout 同理 -->
+    </tbody>
+  </table>
+</div>
+
+
+
                 <div class="results-chart">
                     <img src="assets/images/Fig_main_performance.png" alt="Main Performance Results" class="chart-img">
                 </div>
