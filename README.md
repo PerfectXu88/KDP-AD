@@ -20,8 +20,7 @@
 
 ## 🛣️ Demo Video
 
-https://github.com/PerfectXu88/KDP-AD/blob/4e69fd7d518397c3afa38f3117fb2ce8239a058c/docs/assets/videos/large_map
-
+https://github.com/user-attachments/assets/d71d7a71-549f-40a3-b2ad-084ebd82e6e3
 
 ## 📄 License
 
