@@ -78,6 +78,27 @@ python train.py
 python eval.py
 ```
 
-## 📄 License
+---
 
-This project is released under the [Apache 2.0 license](LICENSE). 
+## 🙌 Acknowledgements  
+
+This work builds upon the foundation of the following outstanding contributions to the open-source community:  
+
+[MetaDrive](https://github.com/metadriverse/metadrive), [Diffusion](https://github.com/hojonathanho/diffusion), [Diffusion Policy](https://github.com/real-stanford/diffusion_policy), [Mixture of Experts](https://github.com/davidmrau/mixture-of-experts), [Mixture of Expert(Pytorch)](https://github.com/lucidrains/mixture-of-experts)
+
+We thank the open-source community for providing code, benchmarks, and datasets that made this project possible.  
+
+---
+
+## 📚 Citation  
+
+If you find **KDP-AD** useful in your research, please cite our work:  
+
+```bibtex
+@article{xu2025kdp,
+  title   = {A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing},
+  author  = {Xu, Chengkai and Liu, Jiaqi and Guo, Yicheng and Hang, Peng and Sun, Jian},
+  journal = {arXiv preprint arXiv:todo,todo},
+  year    = {2025}
+}
+```
