@@ -19,7 +19,7 @@
 - **Scalable & Interpretable**: Experts exhibit structured specialization and cross-scenario reuse.
 
 ## 🛣️ Demo Video
-https://github.com/PerfectXu88/KDP-AD/blob/4e69fd7d518397c3afa38f3117fb2ce8239a058c/docs/assets/videos/large_map.mp4
+https://github.com/PerfectXu88/KDP-AD/blob/4e69fd7d518397c3afa38f3117fb2ce8239a058c/docs/assets/videos/large_map
 
 
 ## 📄 License
