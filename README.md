@@ -15,7 +15,7 @@
 ## Framework
 
 <div align="center">
-<img src="./docs/assets/images/Fig_framework.png" width="90%" alt="KDP-AD Framework Overview">
+<img src="./docs/assets/images/Fig_framework_white.png" width="90%" alt="KDP-AD Framework Overview">
 </div>
 
 ## 🚀 Highlights
