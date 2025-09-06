@@ -48,14 +48,3 @@ pytorchvideo==0.1.5
 dm-control==1.0.9
 pybullet-svl==3.1.6.4
 free-mujoco-py==2.1.6
-
-# imagecodecs：你的 yml 里先装 2022.8.8 再 pip 装 2022.9.26（为 jpeg-xl），这里直接给新一点的。
-# 如遇到编解码冲突可卸载回退到旧版。
-# imagecodecs==2022.9.26
-
-# 机器人/仿真相关（需要系统库，见下文）
-# robomimic==0.2.0
-
-# 源码安装包
-# robosuite @ https://github.com/cheng-chi/robosuite/archive/277ab9588ad7a4f4b55cf75508b44aa67ec171f0.tar.gz
-# r3m @ https://github.com/facebookresearch/r3m/archive/b2334e726887fa0206962d7984c69c5fb09cceab.tar.gz
