@@ -4,9 +4,9 @@
 
 ### A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing
 
-[![arXiv](https://img.shields.io/badge/arXiv-todo.todo-b31b1b.svg)](https://perfectxu88.github.io/KDP-AD/) [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://perfectxu88.github.io/KDP-AD/) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.04853-b31b1b.svg)](https://perfectxu88.github.io/KDP-AD/) [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://perfectxu88.github.io/KDP-AD/) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[**📄 Paper**](https://arxiv.org/abs/todo.todo) | [**🌐 Project Page**](https://perfectxu88.github.io/KDP-AD/)
+[**📄 Paper**](https://arxiv.org/abs/2509.04853) | [**🌐 Project Page**](https://perfectxu88.github.io/KDP-AD/)
 
 </div>
 
@@ -98,7 +98,7 @@ If you find **KDP-AD** useful in your research, please cite our work:
 @article{xu2025kdp,
   title   = {A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing},
   author  = {Xu, Chengkai and Liu, Jiaqi and Guo, Yicheng and Hang, Peng and Sun, Jian},
-  journal = {arXiv preprint arXiv:todo,todo},
+  journal = {arXiv preprint arXiv:2509.04853},
   year    = {2025}
 }
 ```
