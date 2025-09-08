@@ -85,11 +85,11 @@ window.addEventListener('scroll', function() {
 
 // Copy BibTeX function
 function copyBibTeX() {
-    const bibtext = `@article{liu2024pavlmr1,
-  title={Mimicking the Physicist's Eye: A VLM-centric Approach for Physics Formula Discovery},
-  author={Liu, Jiaqi},
-  journal={arXiv preprint},
-  year={2024}
+    const bibtext = `@article{xu2025kdp,
+  title={A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing},
+  author={Xu, Chengkai and Liu, Jiaqi and Guo, Yicheng and Hang, Peng and Sun, Jian},
+  journal={arXiv preprint arXiv:2509.04853},
+  year={2025}
 }`;
     
     navigator.clipboard.writeText(bibtext).then(function() {

@@ -72,9 +72,6 @@ social_links:
   twitter: your-twitter   # Replace with actual Twitter handle (optional)
   linkedin: your-linkedin # Replace with actual LinkedIn profile (optional)
 
-# Google Analytics (optional)
-# google_analytics: UA-XXXXXXXX-X
-
 # Academic paper information
 paper:
   title: "A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing"
@@ -99,17 +96,6 @@ dataset:
     - "Numerical motion data"
     - "Ground-truth symbolic equations"
 
-# Research highlights
-highlights:
-  - metric: "Structural Score Improvement"
-    value: "56.7%"
-    description: "Over best baseline (Claude-4-Sonnet)"
-  - metric: "Accuracy Score Improvement"
-    value: "45.4%"
-    description: "Over top zero-shot model"
-  - metric: "Error Reduction"
-    value: "3×"
-    description: "Lower MSE than best baseline"
 
 # GitHub repository information https://perfectxu88.github.io/KDP-AD/
 repo:
