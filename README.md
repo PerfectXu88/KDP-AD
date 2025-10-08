@@ -4,7 +4,7 @@
 
 ### A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing
 
-[![arXiv](https://img.shields.io/badge/arXiv-2509.04853-b31b1b.svg)](https://perfectxu88.github.io/KDP-AD/) [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://perfectxu88.github.io/KDP-AD/) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.04853-b31b1b.svg)](https://arxiv.org/abs/2509.04853) [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://perfectxu88.github.io/KDP-AD/) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 
 [**📄 Paper**](https://arxiv.org/abs/2509.04853) | [**🌐 Project Page**](https://perfectxu88.github.io/KDP-AD/)
 
